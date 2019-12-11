@@ -1,0 +1,41 @@
+
+}
+.card-body{
+    background-color: white;
+}
+img{
+    height: 35px !important;
+    width: 100px;
+}
+h1{
+    font: bold;
+    font-family: 'lobster';
+}
+.card-text{
+    font-family: 'Oswald';
+}
+.red{
+    font-family: 'Montserrat Bold';
+}
+.vision{
+    text-align: center
+     !important;
+    font-size: 250%;
+    font-family: 'lobster';
+    color: black;
+}
+#word{
+    font-family: 'lobster' !important;
+    }
+p{
+    font-display: swap;
+    font-size: 190%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    color: black;
+}    
+mycol{
+
+}
+myrow{
+    
+}
