@@ -16,6 +16,6 @@ class Category extends Model
 
     public function donations()
     {
-        return $this->belongsToMany(Donation::class);
+        return $this->belongsToMany(Donation::class, 'category_donation');
     }
 }

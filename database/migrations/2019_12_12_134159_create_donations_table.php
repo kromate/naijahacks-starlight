@@ -16,10 +16,10 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('description');
+            $table->string('description', 1500);
             $table->string('type');
-            $table->string('image', 1000);
-            $table->text('attachments');
+            $table->string('image', 1000)->nullable();
+            $table->text('attachments')->nullable();
             $table->string('quantity');
             $table->string('location');
             $table->string('status');

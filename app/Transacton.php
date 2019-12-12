@@ -12,7 +12,7 @@ class Transacton extends Model
 
     protected $fillable = [
         'donation_id',
-        'reciever_id',
+        'receiver_id',
         'quantity',
     ];
 
@@ -23,6 +23,6 @@ class Transacton extends Model
 
     public function reciever()
     {
-        return $this->belongsTo(Reciever::class);
+        return $this->belongsTo(Receiver::class);
     }
 }

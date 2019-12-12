@@ -17,11 +17,11 @@ class CreateTransactonsTable extends Migration
             $table->bigIncrements('id');
             $table->string('quantity');
             $table->unsignedBigInteger('donation_id');
-            $table->unsignedBigInteger('reciever_id');
+            $table->unsignedBigInteger('receiver_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('reciver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('donation_id')->references('id')->on('donations')->onDelete('cascade');
         });
     }
