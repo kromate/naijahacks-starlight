@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'name',
         'description',
@@ -13,6 +16,6 @@ class Category extends Model
 
     public function donations()
     {
-        return $this->hasMany(Donation::class);
+        return $this->belongsToMany(Donation::class);
     }
 }
