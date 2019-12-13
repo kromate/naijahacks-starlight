@@ -18,7 +18,7 @@ class CreateCategoryDonationTable extends Migration
             $table->unsignedBigInteger('donation_id');
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('donation_id')->references('id')->on('danations')->onDelete('cascade');
+            $table->foreign('donation_id')->references('id')->on('donations')->onDelete('cascade');
         });
     }
 

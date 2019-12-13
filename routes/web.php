@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+Route::get('/donation', 'HomeController@donations');
+Route::get('/faq', 'HomeController@faq');
+
+Auth::routes();
+
+Route::namespace('Account')->group(function () {
+    Route::get('/account', 'HomeController@index')->name('account.home');
 });

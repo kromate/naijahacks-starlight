@@ -29,14 +29,18 @@ class DatabaseSeeder extends Seeder
             'verified' => User::VERIFIED,
             'admin' => true,
         ]);
+
         factory(User::class, 500)->create();
+
         factory(Category::class, 10)->create();
+
         factory(Donation::class, 1000)->create()->each(
             function ($donation) {
                 $categories = Category::all()->random(mt_rand(1, 3))->pluck('id');
                 $donation->categories()->attach($categories);
             }
         );
+
         factory(Transacton::class, 1000)->create();
         // $this->call(UsersTableSeeder::class);
     }
