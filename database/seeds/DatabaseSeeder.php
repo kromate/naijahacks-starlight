@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        Category::truncate();
-        Donation::truncate();
-        Transacton::truncate();
-        DB::table('category_donation')->truncate();
+        // User::truncate();
+        // Category::truncate();
+        // Donation::truncate();
+        // Transacton::truncate();
+        // DB::table('category_donation')->truncate();
 
         User::create([
             'name' => 'Busola Okeowo',
