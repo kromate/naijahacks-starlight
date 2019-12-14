@@ -15,8 +15,8 @@
               </h1>
               <p>The future Leaders of Tomorrow Start by Reading a Book Today</p>
               <p>
-                  <a href="{{route('account.donations.create')}}" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Give </a>
-                  <a href="{{url('/donation')}}" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Find</a>
+                  <a href="{{route('account.donations.create')}}" class="btn btn-secondary btn-outline-white px-4 py-3"> Give </a>
+                  <a href="{{url('/donation')}}" class="btn btn-secondary btn-outline-white px-4 py-3"> Find</a>
               </p>
             </div>
           </div>
@@ -115,21 +115,21 @@
           </div>
         </div>
         <div class="card-columns">
-        @foreach ($donations as $item)
+        @foreach ($donations as $donation)
             <div class="card ftco-animate blog-entry" data-aos-delay="100">
-                @if ($item->image != '')
-                    <a href="#" class="block-20" style="background-image: url({{asset('uploads/donations/images/'.$item->image)}});">
+                @if ($donation->image != '')
+                    <a href="#" class="block-20" style="background-image: url({{asset('uploads/donations/images/'.$donation->image)}});">
                     </a>
                 @endif
                 <div class="text p-4 d-block">
                     <div class="meta mb-3">
-                        <div><a href="#">Donated by <strong class="text-primary">{{$item->donor->name}}</strong></a></div>
-                        <div><a href="#" class="meta-chat"><strong>{{$item->quantity}} </strong> in stock</a></div>
-                        <div><a class="badge badge-dark text-white" href="#">{{$item->type}}</a></div>
-                        <div><a class="badge badge-dark text-white" href="#">{{$item->state}}</a></div>
+                        <div><a href="#">Donated by <strong class="text-primary">{{$donation->donor->name}}</strong></a></div>
+                        <div><a href="#" class="meta-chat"><strong>{{$donation->quantity}} </strong> in stock</a></div>
+                        <div><a class="badge badge-dark text-white" href="#">{{$donation->type}}</a></div>
+                        <div><a class="badge badge-dark text-white" href="#">{{$donation->state}}</a></div>
                     </div>
-                    <h3 class="heading"><a href="#">{{$item->name}}</a></h3>
-                    <p><a class="btn btn-primary" href="{{ action('HomeController@singleDonation', $item->id) }}">View details</a></p>
+                    <h3 class="heading"><a href="#">{{$donation->name}}</a></h3>
+                    <p><a class="btn btn-primary" href="{{ action('HomeController@singleDonation', $donation->id) }}">View details</a></p>
                 </div>
             </div>
         @endforeach
@@ -164,7 +164,7 @@
       </div>
     </section>
 
-    <section class="ftco-section">
+    <section id="why" class="ftco-section pb-0">
       <div class="container-fluid">
         <div class="row no-gutters justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -198,7 +198,7 @@
       </div>
     </section>
 
-    <section class="ftco-section testimony-section ftco-degree-bg">
+    {{-- <section class="ftco-section testimony-section ftco-degree-bg">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -283,7 +283,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter">
       <div class="container">

@@ -8,10 +8,11 @@
             <p class="meta d-flex mb-3">
                 <span>Donated by <a href="#">{{$donation->donor->name}} </a> </span>
             </p>
-            <div><img src="{{asset('uploads/donations/images/'.$item->image)}}" alt="{{$donation->name}}"> </div>
+            <div><img src="{{asset('uploads/donations/images/'.$donation->image)}}" alt="{{$donation->name}}"> </div>
             <h3>{{$donation->name}}</h3>
             <p>Quantity: {{$donation->quantity}}</p>
-            <p>Type: {{$donation->quantity}}</p>
+            <p>Type: {{$donation->type}}</p>
+            <p>location: {{$donation->location['state']}}</p>
             {!!$donation->description!!}
 
             <div class="tag-widget post-tag-container mb-5 mt-5">
@@ -28,7 +29,7 @@
               </div>
               <div class="desc align-self-md-center">
                 <h3>{{$donation->donor->name}}</h3>
-                <p><a href="#" class="btn btn-primary">Discuss your meeting location</a></p>
+                <p><a href="#" class="btn btn-primary">Discuss your meeting location</a><small class="text-warning">Unforunately this feature is not ready yet. please check back later</small></p>
               </div>
             </div>
 

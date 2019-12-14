@@ -54,8 +54,8 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="{{url('/donation')}}" class="nav-link">Donations</a></li>
-                        <li class="nav-item"><a href="#why" class="nav-link">Why?</a></li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item"><a href="{{url('/#why')}}" class="nav-link">Why?</a></li>
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
                                 <a class="dropdown-item" href="#"><i class="fa fa-list" aria-hidden="true"></i> All</a>
@@ -63,7 +63,7 @@
                                 <a class="dropdown-item" href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-book" aria-hidden="true"></i> Materials</a>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item"><a href="{{url('/faq')}}" class="nav-link">FAQ</a></li>
                     </ul>
 
@@ -80,8 +80,18 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('account.home') }}">{{ __('My Account') }}</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">{{ __('My Account') }}</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                    <a class="dropdown-item text-danger" href="{{ route('account.home') }}">Dashboard</a>
+                                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
                             </li>
                         @endguest
                     </ul>

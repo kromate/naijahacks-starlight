@@ -29,7 +29,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{{ $donation->description }}</td>
+                                    <td>{{ str_limit($donation->description, 50) }}</td>
                                     <td>{{ $donation->location['state'] }}</td>
                                     <td>{{ $donation->type }}</td>
                                     <td>{{ $donation->status }}</td>

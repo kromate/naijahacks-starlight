@@ -63,9 +63,9 @@ class DonationsController extends Controller
             'address_line2' => 'required|string',
         ];
 
-        $this->validate($request, $rules);
+        // $this->validate($request, $rules);
 
-        $data = $request->all();
+        $data = $request->except(['state', 'address_line1', 'address_line2', 'lga']);
         $data['status'] = $request->status ?: Donation::AVAILABLE_DONATION;
         $data['location'] = [
             'state' => $request->state,
@@ -77,7 +77,7 @@ class DonationsController extends Controller
         $data['donor_id'] = Auth::user()->id;
 
         Donation::create($data);
-        return redirect()->route('accounts.donations.index');
+        return redirect()->route('account.donations.index');
     }
 
     /**
@@ -89,7 +89,7 @@ class DonationsController extends Controller
     public function edit(Donation $donation)
     {
         $data = [
-            'pageTitle' => 'Create New Donation',
+            'pageTitle' => 'Edit Donation',
             'donation' => $donation,
             'types' => Donation::DONATION_TYPE,
         ];
@@ -110,7 +110,7 @@ class DonationsController extends Controller
             'status' => 'required|in:' . Donation::AVAILABLE_DONATION . ',' . Donation::UNAVAILABLE_DONATION,
         ];
 
-        $this->validate($request, $rules);
+        // $this->validate($request, $rules);
 
         $fillable = [
             'name',
@@ -127,7 +127,7 @@ class DonationsController extends Controller
 
         foreach ($fillable as $key) {
             if ($request->has($key)) {
-                $data['key'] = $request[$key];
+                $data[$key] = $request->input($key);
             }
         }
         $data['location'] = [
@@ -138,8 +138,7 @@ class DonationsController extends Controller
         ];
 
         $donation->save($data);
-        $request->session()->put('success', 'donation saved');
-        return redirect()->route('accounts.donations.index');
+        return redirect()->route('account.donations.index');
     }
 
     /**
@@ -151,6 +150,6 @@ class DonationsController extends Controller
     public function destroy(Donation $donation)
     {
         $donation->delete();
-        return redirect()->route('accounts.donations.index');
+        return redirect()->route('account.donations.index');
     }
 }

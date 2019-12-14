@@ -26,7 +26,7 @@
                 <a href="{{route('account.home')}}" class="list-group-item list-group-item-action active">Dashboard</a>
                 <a href="{{route('account.donations.index')}}" class="list-group-item list-group-item-action">My Donations</a>
                 <a href="{{route('account.donations.create')}}" class="list-group-item list-group-item-action">Add Donations</a>
-                <a href="{{route('account.transactions.index')}}" class="list-group-item list-group-item-action disabled">Transactions</a>
+                {{-- <a href="{{route('account.transactions.index')}}" class="list-group-item list-group-item-action disabled">Transactions</a> --}}
             </div>
         </div>
         <div class="col-md-9">
