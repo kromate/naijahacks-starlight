@@ -131,10 +131,10 @@ class DonationsController extends Controller
             }
         }
         $data['location'] = [
-            'address_line1' => $request->has('address_line1') ? $request->address_line1 : $donation->location->address_line1,
-            'address_line2' => $request->has('address_line2') ? $request->address_line2 : $donation->location->address_line2,
-            'state' => $request->has('state') ? $request->state : $donation->location->state,
-            'lga' => $request->has('lga') ? $request->lga : $donation->location->lga,
+            'address_line1' => $request->has('address_line1') ? $request->address_line1 : $donation->location['address_line1'],
+            'address_line2' => $request->has('address_line2') ? $request->address_line2 : $donation->location['address_line2'],
+            'state' => $request->has('state') ? $request->state : $donation->location['state'],
+            'lga' => $request->has('lga') ? $request->lga : $donation->location['lga'],
         ];
 
         $donation->save($data);

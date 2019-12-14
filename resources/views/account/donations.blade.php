@@ -30,7 +30,7 @@
                                         </div>
                                     </td>
                                     <td>{{ $donation->description }}</td>
-                                    <td>{{ $donation->location }}</td>
+                                    <td>{{ $donation->location['state'] }}</td>
                                     <td>{{ $donation->type }}</td>
                                     <td>{{ $donation->status }}</td>
                                 </tr>

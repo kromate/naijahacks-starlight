@@ -14,7 +14,12 @@ $factory->define(Donation::class, function (Faker $faker) {
         'type' => Arr::random(Donation::DONATION_TYPE),
         'image' => Arr::random(['1.jpg', '2.jpg', '3.jpg', null]),
         'quantity' => $quantity = random_int(0, 10),
-        'location' => $faker->address,
+        'location' => [
+            'address_line1' => $faker->streetAddress,
+            'address_line2' => $faker->secondaryAddress,
+            'lga' => $faker->city,
+            'state' => $faker->state,
+        ],
         'status' => ($quantity == 0) ? Donation::UNAVAILABLE_DONATION : Donation::AVAILABLE_DONATION,
         'donor_id' => User::all()->random()->id,
     ];
