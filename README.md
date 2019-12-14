@@ -1,4 +1,4 @@
-# naijahacks-starlight
+# NaijaHacks-starlight
 Team Starlight official Github repo for the Naijahacks 2019
 # Team Members
 - Akpan Anthony - Team lead, frontend and UI/UX designer
@@ -14,5 +14,5 @@ This idea was gotten from our childhood experience, where the elder ones pass on
 - Backend ( PHP, Javascript)
 # Benefit
 - Low Cost in the Educational sector mainly books
-- less destruction of book
--Promotes educational System of Nigeria.
+- less destruction of book.
+- Promotes educational System of Nigeria.
