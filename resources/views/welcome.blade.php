@@ -157,7 +157,7 @@
                         <li class="list-inline-item"><i class="fas fa-dice-three fa-sm fa-fw"></i>Submit!</li>
                     </ol>
                 </p>
-              <p><a href="{{route('account.donate.create')}}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">Donate today</a></p>
+              <p><a href="{{route('account.donations.create')}}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">Donate today</a></p>
             </div>
           </div>
         </div>
