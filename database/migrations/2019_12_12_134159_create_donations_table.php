@@ -21,7 +21,7 @@ class CreateDonationsTable extends Migration
             $table->string('image', 1000)->nullable();
             $table->text('attachments')->nullable();
             $table->string('quantity');
-            $table->string('location');
+            $table->string('location', 2000);
             $table->string('status');
             $table->unsignedBigInteger('donor_id');
             $table->timestamps();

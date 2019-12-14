@@ -13,7 +13,7 @@ class Donation extends Model
         'book',
         'time',
         'money',
-        'money',
+        'material',
     ];
 
     const AVAILABLE_DONATION = 'available';
@@ -29,6 +29,10 @@ class Donation extends Model
         'location',
         'status',
         'donor_id',
+    ];
+
+    protected $casts = [
+        'location' => 'array'
     ];
 
     public function isAvailable()

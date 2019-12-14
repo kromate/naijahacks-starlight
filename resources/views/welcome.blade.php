@@ -15,8 +15,8 @@
               </h1>
               <p>The future Leaders of Tomorrow Start by Reading a Book Today</p>
               <p>
-                  <a href="#" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Give </a>
-                  <a href="#" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Find</a>
+                  <a href="{{route('account.donations.create')}}" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Give </a>
+                  <a href="{{url('/donation')}}" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Find</a>
               </p>
             </div>
           </div>
@@ -116,24 +116,22 @@
         </div>
         <div class="card-columns">
         @foreach ($donations as $item)
-          {{-- <div class="col-md-4 ftco-animate"> --}}
-            <div class="card blog-entry" data-aos-delay="100">
-              @if ($item->image != '')
-                <a href="#" class="block-20" style="background-image: url({{asset('donations/images/'.$item->image)}});">
-                </a>
-              @endif
-              <div class="text p-4 d-block">
-                <div class="meta mb-3">
-                  <div><a href="#">{{$item->donor->name}}</a></div>
-                  <div><a href="#" class="meta-chat"><strong>{{$item->quantity}} </strong> in stock</a></div>
-                  <div><a class="badge badge-dark text-white" href="#">{{$item->type}}</a></div>
-                  <div><a class="badge badge-dark text-white" href="#">{{$item->location}}</a></div>
+            <div class="card ftco-animate blog-entry" data-aos-delay="100">
+                @if ($item->image != '')
+                    <a href="#" class="block-20" style="background-image: url({{asset('uploads/donations/images/'.$item->image)}});">
+                    </a>
+                @endif
+                <div class="text p-4 d-block">
+                    <div class="meta mb-3">
+                        <div><a href="#">Donated by <strong class="text-primary">{{$item->donor->name}}</strong></a></div>
+                        <div><a href="#" class="meta-chat"><strong>{{$item->quantity}} </strong> in stock</a></div>
+                        <div><a class="badge badge-dark text-white" href="#">{{$item->type}}</a></div>
+                        <div><a class="badge badge-dark text-white" href="#">{{$item->state}}</a></div>
+                    </div>
+                    <h3 class="heading"><a href="#">{{$item->name}}</a></h3>
+                    <p><a class="btn btn-primary" href="{{ action('HomeController@singleDonation', $item->id) }}">View details</a></p>
                 </div>
-                <h3 class="heading"><a href="#">{{$item->name}}</a></h3>
-                <p><a class="btn btn-primary" href="{{ action('HomeController@singleDonation', $item->id) }}">See more</a></p>
-              </div>
             </div>
-          {{-- </div> --}}
         @endforeach
         </div>
         <div class="row mt-5">
@@ -151,8 +149,15 @@
         <div class="container">
           <div class="row d-flex justify-content-center">
             <div class="col-md-10 text-center heading-section heading-section-white ftco-animate">
-              <h2 class="h1 font-weight-bold">Don't Throw away your old books, Give to someone who needs it</h2>
-              <p><a href="#" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">Donate today</a></p>
+              <h2 class="h1 font-weight-bold">Don't Throw away your old books, Give to someone who needs it. With 3 simple steps!</h2>
+                <p>
+                    <ol class="list-inline text-white">
+                        <li class="list-inline-item"><i class="fas fa-dice-one fa-sm fa-fw"></i>Create an account |  </li>
+                        <li class="list-inline-item"><i class="fas fa-dice-two fa-sm fa-fw"></i>Fill the donation form |  </li>
+                        <li class="list-inline-item"><i class="fas fa-dice-three fa-sm fa-fw"></i>Submit!</li>
+                    </ol>
+                </p>
+              <p><a href="{{route('account.donate.create')}}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">Donate today</a></p>
             </div>
           </div>
         </div>

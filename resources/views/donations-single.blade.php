@@ -8,6 +8,7 @@
             <p class="meta d-flex mb-3">
                 <span>Donated by <a href="#">{{$donation->donor->name}} </a> </span>
             </p>
+            <div><img src="{{asset('uploads/donations/images/'.$item->image)}}" alt="{{$donation->name}}"> </div>
             <h3>{{$donation->name}}</h3>
             <p>Quantity: {{$donation->quantity}}</p>
             <p>Type: {{$donation->quantity}}</p>
@@ -23,11 +24,11 @@
 
             <div class="about-author d-flex p-5 bg-light">
               <div class="bio align-self-md-center mr-5">
-                <img src="{{asset("images/person_1.jpg")}}" alt="{{$donation->donor->name}}" class="img-fluid mb-4">
+                <img src="{{asset("images/person_1.jpg")}}" alt="{{$donation->donor->name}}" width="120px" class="img-fluid rounded-circle mb-4">
               </div>
               <div class="desc align-self-md-center">
                 <h3>{{$donation->donor->name}}</h3>
-                <p><a href="#" class="btn btn-primary">Discuss</a></p>
+                <p><a href="#" class="btn btn-primary">Discuss your meeting location</a></p>
               </div>
             </div>
 

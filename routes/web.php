@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'HomeController@index');
 Route::get('/donation', 'HomeController@donations');
 Route::get('/donation/{id}', 'HomeController@singleDonation');
@@ -19,9 +20,14 @@ Route::get('/faq', 'HomeController@faq');
 Auth::routes();
 
 
-Route::namespace('Account')->group(function () {
-    Route::get('/account', 'HomeController@index')->name('account.home');
-    Route::get('/account/chat', 'ChatsController@index')->name('account.chat');
-    Route::get('/account/messages', 'ChatsController@fetchMessages')->name('account.messages');
-    Route::post('/account/messages', 'ChatsController@sendMessage')->name('account.messages.post');
+Route::namespace('Account')->prefix('account')->name('account.')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::get('chat', 'ChatsController@index')->name('chat');
+    Route::get('messages', 'ChatsController@fetchMessages')->name('messages');
+    Route::post('messages', 'ChatsController@sendMessage')->name('messages.send');
+
+    Route::resource('donations', 'DonationsController', ['except' => ['show']]);
+    Route::resource('transactions', 'TransactionsController', ['except' => ['show']]);
 });
