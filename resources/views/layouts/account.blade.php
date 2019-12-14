@@ -18,3 +18,25 @@
 </div>
 @endsection
 
+@section('content')
+<div class="container py-3">
+    <div class="row justify-content-center">
+        <div class="col-md-3 pb-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action">Item</a>
+                <a href="#" class="list-group-item list-group-item-action disabled">Disabled item</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+            @yield('account-content')
+        </div>
+    </div>
+</div>
+
+@endsection

@@ -39,9 +39,10 @@
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    @yield('styles')
 </head>
 <body>
-    <div id="app">
+    <div class="app">
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="{{ asset('images/logo.jpg') }}" alt="{{ config('app.name', 'Laravel') }}"></a>
@@ -183,5 +184,6 @@
     <script src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false') }}"></script>
     <script src="{{ asset('js/google-map.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    @yield('scripts')
     </body>
 </html>

@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::namespace('Account')->group(function () {
     Route::get('/account', 'HomeController@index')->name('account.home');
-    Route::get('/chat', 'ChatsController@index');
-    Route::get('messages', 'ChatsController@fetchMessages');
-    Route::post('messages', 'ChatsController@sendMessage');
+    Route::get('/account/chat', 'ChatsController@index')->name('account.chat');
+    Route::get('/account/messages', 'ChatsController@fetchMessages')->name('account.messages');
+    Route::post('/account/messages', 'ChatsController@sendMessage')->name('account.messages.post');
 });
