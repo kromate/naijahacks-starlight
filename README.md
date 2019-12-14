@@ -1,4 +1,4 @@
-# NaijaHacks-starlight
+# NaijaHacks-Starlight
 Team Starlight official Github repo for the Naijahacks 2019
 # Team Members
 - Akpan Anthony - Team lead, frontend and UI/UX designer
