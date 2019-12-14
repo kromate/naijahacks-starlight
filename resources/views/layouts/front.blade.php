@@ -84,9 +84,11 @@
                             </li>
                         @endguest
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="custom-control mr-sm-2 rounded-search" type="search" placeholder="Search">
-                        <button class="btn btn-primary my-2 my-sm-0 search-submit" type="submit">Search</button>
+                    <form action="#" class="search-form p-0">
+                        <div class="form-group m-0">
+                            <span class="icon fa fa-search"></span>
+                            <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                        </div>
                     </form>
                 </div>
             </div>

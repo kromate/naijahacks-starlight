@@ -16,7 +16,7 @@
               <p>The future Leaders of Tomorrow Start by Reading a Book Today</p>
               <p>
                   <a href="#" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Give </a>
-                  <a href="#" class="btn btn-secondary btn-outline-dark px-4 py-3 popup-vimeo"> Find</a>
+                  <a href="#" class="btn btn-secondary btn-outline-white px-4 py-3 popup-vimeo"> Find</a>
               </p>
             </div>
           </div>
@@ -125,10 +125,12 @@
               <div class="text p-4 d-block">
                 <div class="meta mb-3">
                   <div><a href="#">{{$item->donor->name}}</a></div>
-                  <div><a href="#" class="meta-chat">#{{$item->quantity}}</a></div>
-                  <div><a class="badge badge-primary" href="#">{{$item->type}}</a></div>
+                  <div><a href="#" class="meta-chat"><strong>{{$item->quantity}} </strong> in stock</a></div>
+                  <div><a class="badge badge-dark text-white" href="#">{{$item->type}}</a></div>
+                  <div><a class="badge badge-dark text-white" href="#">{{$item->location}}</a></div>
                 </div>
                 <h3 class="heading"><a href="#">{{$item->name}}</a></h3>
+                <p><a class="btn btn-primary" href="{{ action('HomeController@singleDonation', $item->id) }}">See more</a></p>
               </div>
             </div>
           {{-- </div> --}}

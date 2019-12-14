@@ -43,6 +43,17 @@ class HomeController extends Controller
         return view('donations', $data);
     }
 
+    public function singleDonation($id)
+    {
+        $data = [
+            'donation' => $donation = Donation::findOrFail($id),
+            'categories' => Category::withCount('donations')->get(),
+            'pageTitle' => 'Donations',
+            'pageSubtitle' => $donation->name,
+        ];
+        return view('donations-single', $data);
+    }
+
     public function faq()
     {
         $data = [

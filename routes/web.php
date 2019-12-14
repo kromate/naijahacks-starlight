@@ -13,10 +13,15 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/donation', 'HomeController@donations');
+Route::get('/donation/{id}', 'HomeController@singleDonation');
 Route::get('/faq', 'HomeController@faq');
 
 Auth::routes();
 
+
 Route::namespace('Account')->group(function () {
     Route::get('/account', 'HomeController@index')->name('account.home');
+    Route::get('/chat', 'ChatsController@index');
+    Route::get('messages', 'ChatsController@fetchMessages');
+    Route::post('messages', 'ChatsController@sendMessage');
 });

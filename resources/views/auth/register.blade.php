@@ -128,7 +128,7 @@
 						<span class="txt1">
 							Have
 						</span>
-						<a class="txt2" href="{{ route('register') }}">
+						<a class="txt2" href="{{ route('login') }}">
 							 An Account Already?/ Login here
 						</a>
 
@@ -136,11 +136,11 @@
 
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="{{ route('register') }}">
+						<a class="txt2" href="{{ url('/') }}">
 							<i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
 							 Back to <strong>Giveacad Homepage</strong>
 						</a><br>
-						<a class="txt2" href="{{ route('register') }}">
+						<a class="txt2" href="{{ route('login') }}">
 							 Login to your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
